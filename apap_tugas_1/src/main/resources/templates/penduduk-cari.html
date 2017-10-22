@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>View Student by NPM</title>
+    </head>
+    <body>
+       <form action="/penduduk/cari" method="get">
+       	<select th:each="listKota, iterationStatus: ${listKota}">
+       		<option th:text="${listKota.getNama_Kota()}" th:value="${listKota.getNama_kota()}">
+       		</option>
+       	</select>
+       </form>
+    </body>
+</html>
