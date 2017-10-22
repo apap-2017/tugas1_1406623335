@@ -104,6 +104,7 @@ public interface SidukMapper {
 	///////////
 
 	/* Soal 8*/
-	
+	@Select("select * from kota)
+	List<KotaModel> selectKotaModel();
 	///////////
 }
