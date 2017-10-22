@@ -44,5 +44,5 @@ public interface SidukService {
 
 	void updatePendudukMati(int is_wafat, BigInteger id);
 	
-	void selectListKota();
+	List<KotaModel> selectListKota();
 }
