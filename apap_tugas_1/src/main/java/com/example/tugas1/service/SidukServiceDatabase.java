@@ -136,4 +136,8 @@ public class SidukServiceDatabase implements SidukService{
 		sidukMapper.updatePendudukMati(is_wafat, id);
 	}
 
+	@Override
+	public List<KotaModel> selectListKota() {
+		return sidukMapper.selectListKota();
+	}
 }
