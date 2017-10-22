@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>Lihat Data Keluarga</title>
+</head>
+<body>
+	<h3 th:text="'Lihat Data Keluarga - ' + ${keluarga.nomor_kk}">Title
+		Lihat Data Keluarga</h3>
+	<div>
+		<table>
+			<tr>
+				<td>NKK</td>
+				<td th:text="${keluarga.nomor_kk}">NIK</td>
+			</tr>
+			<tr>
+				<td>Alamat</td>
+				<td th:text="${keluarga.alamat}">Nama</td>
+			</tr>
+			<tr>
+				<td>RT/RW</td>
+				<td th:text="${keluarga.RT}+'/ '+${keluarga.RW}">RT/RW</td>
+			</tr>
+			<tr>
+				<td>Kelurahan/Desa</td>
+				<td th:text="${kelurahan.nama_kelurahan}">Alamat</td>
+			</tr>
+			<tr>
+				<td>Kecamatan</td>
+				<td th:text="${kecamatan.nama_kecamatan}">Kecamatan</td>
+			</tr>
+			<tr>
+				<td>Kota</td>
+				<td th:text="${kota.nama_kota}">Kota</td>
+			</tr>
+			<tr>
+				<table>
+					<tr>
+						<th>No.</th>
+						<th>Nama Lengkap</th>
+						<th>NIK</th>
+						<th>Jenis Kelamin</th>
+						<th>Tempat Lahir</th>
+						<th>Tanggal Lahir</th>
+						<th>Agama</th>
+						<th>Pekerjaan</th>
+						<th>Status Perkawinan</th>
+						<th>Status dalam Keluarga</th>
+						<th>Kewarganegaraan</th>
+					</tr>
+					<tr th:each="penduduk, iterationStatus: ${keluarga.penduduk}">
+						<td th:text="${iterationStatus.count}">No</td>
+						<td th:text="${penduduk.nama}">Nama Lengkap</td>
+						<td th:text="${penduduk.nik}">NIK</td>
+						<td th:switch="${penduduk.jenis_kelamin}">
+							<div th:case="0">Laki-laki</div>
+							<div th:case="1">Perempuan</div>
+						</td>
+						<td th:text="${penduduk.tempat_lahir}">Tempat Lahir</td>
+						<td th:text="${penduduk.tanggal_lahir}">Tanggal Lahir</td>
+						<td th:text="${penduduk.agama}">Agama</td>
+						<td th:text="${penduduk.pekerjaan}">Pekerjaan</td>
+						<td th:text="${penduduk.status_perkawinan}">Status Perkawinan</td>
+						<td th:text="${penduduk.status_dalam_keluarga}">Status dalam Keluarga</td>
+						<td th:switch="${penduduk.is_wni}">
+							<div th:case="0">Warga Asing</div>
+							<div th:case="1">WNI</div>
+						</td>
+					</tr>
+				</table>
+			</tr>
+		</table>
+	</div>
+</body>
+</html>

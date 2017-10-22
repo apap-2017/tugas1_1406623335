@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>Search Data Kependudukan</title>
+    </head>
+    <body>
+		<h1>Sistem Informasi Kependudukan Online Provinsi DKI Jakarta</h1>
+		<p>Selamat datang di Sistem Informasi Kependudukan Online Provinsi DKI Jakarta</p>
+		
+		<form action="/penduduk" method="get">
+			<br/>
+			<div>
+				<div>
+					<h2>Lihat Data Penduduk Berdasarkan NIK</h2>
+				</div>
+				<div>
+					<p><b>Masukan Nomor Induk Kependudukan</b></p>
+				</div>
+				<div>
+					<input type="text" name="nik" maxlength="16"/>
+				</div>
+				<div>
+					<button type="submit">Lihat</button>
+				</div>
+			</div>
+		</form>
+		
+		<form action="/keluarga" method="get">
+			<br/>
+			<div>
+				<div>
+					<h2>Lihat Data Keluarga Berdasarkan NKK</h2>
+				</div>
+				<div>
+					<p><b>Masukan Nomor Kartu Keluarga</b></p>
+				</div>
+				<div>
+					<input type="text" name="nkk" maxlength="16"/>
+				</div>
+				<div>
+					<button type="submit">Lihat</button>
+				</div>
+			</div>
+		</form>
+    </body>
+</html>
+

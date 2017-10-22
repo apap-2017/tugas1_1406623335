@@ -1,0 +1,27 @@
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+<head>
+
+<title>Form Ubah Kematian</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+
+<body>
+
+	<h1 class="page-header">Ubah Kematian</h1>
+
+	<form th:action="@{/penduduk/__${penduduk.nik}__}" method="post" th:object="${penduduk}">
+		<div>
+			<label for="is_wafat">Status Kematian</label> 
+			<input type="hidden" name="is_wafat" value="1"/>
+		</div>
+		<div>
+			<button type="submit" name="action" value="simpan">Ubah</button>
+		</div>
+	</form>
+
+</body>
+
+</html>
+

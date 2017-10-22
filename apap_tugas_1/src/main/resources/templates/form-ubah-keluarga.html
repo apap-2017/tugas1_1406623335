@@ -1,0 +1,47 @@
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+<head>
+
+<title>Form Ubah Keluarga</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+
+<body>
+
+	<h1 class="page-header">Ubah Keluarga</h1>
+
+	<form th:action="@{/keluarga/ubah/__${keluarga.nomor_kk}__}" method="post" th:object="${keluarga}">
+		<div>
+			<label for="alamat">Alamat</label>
+			<input type="text" name="alamat" th:field="*{alamat}"/>
+		</div>
+		<div>
+			<label for="RT">RT</label>
+			<input type="text" name="RT" th:field="*{RT}"/>
+		</div>
+		<div>
+			<label for="RW">RW</label>
+			<input type="text" name="RW" th:field="*{RW}"/>
+		</div>
+		<div>
+			<label for="nama_kelurahan">Kelurahan/Desa</label>
+			<input type="text" name="nama_kelurahan" th:value="${nama_kelurahan}"/>
+		</div>
+		<div>
+			<label for="nama_kecamatan">Kecamatan</label>
+			<input type="text" name="nama_kecamatan" th:value="${nama_kecamatan}"/>
+		</div>
+		<div>
+			<label for="nama_kota">Kota</label>
+			<input type="text" name="nama_kota" th:value="${nama_kota}"/>
+		</div>
+		<div>
+			<button type="submit" name="action" value="simpan">Simpan</button>
+		</div>
+	</form>
+
+</body>
+
+</html>
+
