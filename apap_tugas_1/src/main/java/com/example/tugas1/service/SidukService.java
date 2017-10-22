@@ -43,4 +43,6 @@ public interface SidukService {
 	void ubahBerlakuKeluarga(BigInteger id);
 
 	void updatePendudukMati(int is_wafat, BigInteger id);
+	
+	void selectListKota();
 }
