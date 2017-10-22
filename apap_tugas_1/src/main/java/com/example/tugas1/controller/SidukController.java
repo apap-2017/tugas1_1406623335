@@ -403,7 +403,12 @@ public class SidukController {
 	//////////
 	
 	/*Soal 8*/
-	
+	@RequestMapping("/penduduk/cari")
+	public String index() {
+		List<KotaModel> listKota = sidukDAO.selectListKota();
+		model.addAttribute("listKota",listKota);
+		return "penduduk-cari";
+	}
 	///////////
 	
 }
